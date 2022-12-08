@@ -5,6 +5,7 @@ const router = express.Router();
 
 // Get all movies
 router.route("/").get(async (req, res) => {
+  console.log("New request: ", req.headers);
   const movies = await movieServices.getAllMovies();
   return res.json(movies);
 });
